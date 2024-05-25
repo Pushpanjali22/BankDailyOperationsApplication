@@ -1,0 +1,22 @@
+server:
+   port: 8083
+   
+spring:  
+  application:
+       name:  api-gateway
+            
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+      - id: user-service
+        uri: lb://user-service/
+        predicates:
+        - Path=/user/**
+      - id: branch-service
+        uri: lb://branch-service/
+        predicates:
+        - Path=/branch/**
