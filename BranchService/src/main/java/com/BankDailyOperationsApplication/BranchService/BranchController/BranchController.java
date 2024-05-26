@@ -67,4 +67,8 @@ public class BranchController {
 		return new ResponseEntity<>(branchDetailsData,HttpStatus.OK);
 	}
 	
+	public String test() {
+		
+	}
+	
 }
